@@ -1,0 +1,26 @@
+<%- include('partials/header')%>
+
+    <div class="center">
+        <form action="/add" method="POST" enctype="multipart/form-data">
+            <h2>Adicionar Produto</h2>
+            <div class="div-input">
+                <input name="name" type="text" placeholder="Nome do produto">
+            </div>
+            <div class="div-input">
+                <input name="price" type="number" placeholder="Preço">
+            </div>
+            <div class="div-input">
+                <input name="category" type="text" placeholder="Feminino ou Masculino">
+            </div>
+            <div class="div-input">
+                <input name="size" type="text" placeholder="Tamanho do calçado">
+            </div>
+            <div class="div-input">
+                <input name="image" type="file" placeholder="Imagem do produto">
+            </div>
+            <div class="div-input">
+                <button type="submit">Adicionar</button>
+            </div>
+        </form>
+    </div>
+    <%-include('partials/footer')%>

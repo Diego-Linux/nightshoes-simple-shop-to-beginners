@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <title>Acessar Conta</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="img/auth.svg" alt="">
+        </div>
+        <div class="right">
+            <% if(userErr) { %>
+                <div class="validation">
+                   <%=userErr%>
+                </div>
+                      <% } %>
+            <form action="/login" method="POST">
+                <h2>Acessar Conta</h2>
+                <div class="div-input">
+                    <label>Digite seu e-mail</label>
+                    <input name="email" type="email" placeholder="example@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="div-input">
+                    <label>Senha de usuário</label>
+                    <input name="password" type="password" placeholder="***************">
+                    <i class="fas fa-key"></i>
+                </div>
+                <div class="div-input">
+                    <button type="submit">Acessar</button>
+                </div>
+                <p>Não possui conta? <a href="/register">Criar Conta</a></p>
+            </form>
+        </div>
+    </div>
+
+    <%-include('partials/footer')%>

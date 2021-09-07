@@ -1,0 +1,57 @@
+<%-include('partials/header')%>
+
+    <section class="cart">
+        <% if(products.length === 0) { %>
+            <br />
+            <h1 style="color:#fff; text-align:center;">
+                O seu carrinho está vazio...
+            </h1>
+            
+          <% } else { %>
+        <div class="cart-flex" id="cart-flex">
+            <%for(product of products) { %>
+                <div class="cart-item">
+                    <div class="cart-item-img">
+                        <img src="/<%=product.image%>" alt="">
+                    </div>
+                    <div class="cart-item-info">
+                        <div class="info">
+                            <a href="/products/<%=product.productId%>">
+                                <%=product.name%>
+                            </a>
+                        </div>
+                        <div class="info">
+                            <h3>
+                                Preço: R$ <%=product.price%>
+                            </h3>
+                        </div>
+                        <div class="info">
+                            <h3>
+                                Quantidade: <%=product.quantity%>
+                            </h3>
+                        </div>
+                        <div class="info">
+                            <h3 style="color:#39FF14">
+                                Total: R$ <%=product.quantity * product.price%>
+                            </h3>
+                        </div>
+
+                        <!-- <a href="/products/<%=product._id%>">Detalhes</a> -->
+                        <div class="cart-item-btn">
+                            <form method="POST">
+                                <input type="hidden" name="cartId" value="<%=product._id%>">
+                                <input type="hidden" name="productId" value="<%=product.productId%>">
+                                <button type="submit" formaction="/cart/delete" class="btn-del">Deletar</button>
+                                <button formaction="/subquantity" class="btn-sub">-</button>
+                                <button formaction="/addcart" class="btn-add">+</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+        <% } %>
+    </section>
+
+    <%-include('partials/footer')%>

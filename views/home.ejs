@@ -1,0 +1,42 @@
+<%-include('partials/header')%>
+
+    <section class="products">
+        <div class="home-select">
+            <form action="/" method="GET">
+                <select name="category" onchange="this.form.submit()">
+                    <option value="">Categorias</option>
+                    <option value="all">Todas as Categorias</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Masculino">Masculino</option>
+                </select>
+            </form>
+        </div>
+        <% if(products.length === 0) { %>
+            <br />
+            <h2 style="color:#fff; text-align:center;">
+                Não há produtos nesta categoria
+            </h2>
+            
+          <% } else { %>
+        <div class="products-grid">
+            <%for(product of products) { %>
+                <div class="product-item">
+                    <div class="product-item-img">
+                        <img src="/<%=product.image%>" alt="">
+                    </div>
+                    <div class="product-item-details">
+                        <div class="brand">
+                            <h3>
+                                <%=product.name%>
+                            </h3>
+                        </div>
+
+                        <a href="/products/<%=product._id%>">Detalhes</a>
+                    </div>
+                </div>
+                <% } %>
+                <% } %>
+        </div>
+    </section>
+
+    <%-include('partials/footer')%>
