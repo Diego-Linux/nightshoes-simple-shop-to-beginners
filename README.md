@@ -12,7 +12,7 @@
 ## 3 - In your browser access: localhost:5000
 
 
-# Maybe you need to install nodemon and sucrase apart, so:
+# May you need to install nodemon and sucrase apart, so:
 
 ## with npm: npm install nodemon sucrase -D
 ## with yarn: yarn add nodemon sucrase -D
