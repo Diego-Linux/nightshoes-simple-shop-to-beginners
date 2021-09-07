@@ -7,8 +7,8 @@ import mongoose from 'mongoose';
 const mongoStore = require('connect-mongodb-session')(session);
 
 import routes from './routes';
-;
-const mongoDB = 'mongodb://localhost/nightshoes'
+
+const mongoDB = 'mongodb://localhost/nightshoes';
 
 const store = new mongoStore({
     uri: mongoDB,
